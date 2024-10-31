@@ -255,21 +255,21 @@ foreach ($common_tables as $table) {
      </a>
      <script>
      	const prefers = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-		const html = document.querySelector("html");
-		html.dataset.colorScheme = prefers;
-		document.querySelectorAll(`body .color-scheme`).forEach((element) => {
-		  element.querySelector(`svg.${prefers}`).style.display = "inline-block";
-		  element.addEventListener("click", (event) => {
-		  	event.preventDefault();
-		    toggleColorScheme(html.dataset, element);
-		  })
-		})
+	const html = document.querySelector("html");
+	html.dataset.colorScheme = prefers;
+	document.querySelectorAll(`body .color-scheme`).forEach((element) => {
+	  element.querySelector(`svg.${prefers}`).style.display = "inline-block";
+	  element.addEventListener("click", (event) => {
+	    event.preventDefault();
+	    toggleColorScheme(html.dataset, element);
+	  });
+        });
 		
-		function toggleColorScheme(dataset, element) {
-		  dataset.colorScheme = (dataset.colorScheme ?? prefers) === "light" ? "dark" : "light";
-		  element.querySelector("svg.light").style.display = dataset.colorScheme === "light" ? "inline-block" : "none";
-		  element.querySelector("svg.dark").style.display = dataset.colorScheme === "dark" ? "inline-block" : "none";
-		}
+        function toggleColorScheme(dataset, element) {
+	  dataset.colorScheme = (dataset.colorScheme ?? prefers) === "light" ? "dark" : "light";
+	  element.querySelector("svg.light").style.display = dataset.colorScheme === "light" ? "inline-block" : "none";
+	  element.querySelector("svg.dark").style.display = dataset.colorScheme === "dark" ? "inline-block" : "none";
+	}
      </script>
 <?php
 // Output all differences
