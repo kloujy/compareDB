@@ -277,12 +277,12 @@ if (!empty($schema_differences)) {
     echo "<br><h2>Schema differences:</h2>";
     foreach ($tables2 as $table){
 		if (!in_array($table, $tables1)) {
-		    echo "Misssing Table <b>$table</b> in <strong>$db1_user</strong><br>";
+		    echo "Missing Table <b>$table</b> in <strong>$db1_user</strong><br>";
 		}
 	}
 	foreach ($tables1 as $table){
 		if (!in_array($table, $tables2)) {
-		    echo "Misssing Table <b>$table</b> in <strong>$db2_user</strong><br>";
+		    echo "Missing Table <b>$table</b> in <strong>$db2_user</strong><br>";
 		}
 	}
     foreach ($schema_differences as $diff) {
